@@ -1,6 +1,6 @@
 {
   "name": "react-ultimate-pagination-bootstrap-3",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React.js pagination component with Bootstrap 3 theme",
   "main": "lib/react-ultimate-pagination-bootstrap-3.js",
   "keywords": [
@@ -36,6 +36,9 @@
   "homepage": "https://github.com/ultimate-pagination/react-ultimate-pagination-bootstrap-3#readme",
   "dependencies": {
     "react-ultimate-pagination": "0.7.2"
+  },
+  "peerDependencies": {
+    "bootstrap": "3.x"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",

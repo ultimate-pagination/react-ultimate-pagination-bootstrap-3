@@ -1,30 +1,32 @@
 import React from 'react';
 import {createUltimatePagination, ITEM_TYPES} from 'react-ultimate-pagination';
 
-const activePageStyle = {fontWeight: 'bold'};
+const WrapperComponent = ({children}) => (
+  <ul className="pagination">{children}</ul>
+);
 
 const Page = ({value, isActive, onClick}) => (
-  <button style={isActive ? activePageStyle : null} onClick={onClick}>{value}</button>
+  <li className={isActive ? 'active' : null}><a href="#" onClick={onClick}>{value}</a></li>
 );
 
 const Ellipsis = ({onClick}) => (
-  <button onClick={onClick}>...</button>
+  <li><a href="#" onClick={onClick}>...</a></li>
 );
 
 const FirstPageLink = ({isActive, onClick}) => (
-  <button onClick={onClick}>First</button>
+  <li><a href="#" onClick={onClick}>&laquo;</a></li>
 );
 
 const PreviousPageLink = ({isActive, onClick}) => (
-  <button onClick={onClick}>Prev</button>
+  <li><a href="#" onClick={onClick}>&lsaquo;</a></li>
 );
 
 const NextPageLink = ({isActive, onClick}) => (
-  <button onClick={onClick}>Next</button>
+  <li><a href="#" onClick={onClick}>&rsaquo;</a></li>
 );
 
 const LastPageLink = ({isActive, onClick}) => (
-  <button onClick={onClick}>Last</button>
+  <li><a href="#" onClick={onClick}>&raquo;</a></li>
 );
 
 const itemTypeToComponent = {
@@ -36,6 +38,6 @@ const itemTypeToComponent = {
   [ITEM_TYPES.LAST_PAGE_LINK]: LastPageLink
 };
 
-const UltimatePaginationBootstrap3 = createUltimatePagination({itemTypeToComponent});
+const UltimatePaginationBootstrap3 = createUltimatePagination({itemTypeToComponent, WrapperComponent});
 
 export default UltimatePaginationBootstrap3;
