@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/ultimate-pagination/react-ultimate-pagination-bootstrap-3#readme",
   "dependencies": {
-    "react-ultimate-pagination": "0.7.2"
+    "react-ultimate-pagination": "0.9.0"
   },
   "peerDependencies": {
     "bootstrap": "3.x"
