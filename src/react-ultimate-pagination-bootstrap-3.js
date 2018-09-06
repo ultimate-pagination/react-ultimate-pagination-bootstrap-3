@@ -1,32 +1,37 @@
 import React from 'react';
 import {createUltimatePagination, ITEM_TYPES} from 'react-ultimate-pagination';
 
+const withPreventDefault = (fn) => (event) => {
+  event.preventDefault();
+  fn();
+};
+
 const WrapperComponent = ({children}) => (
   <ul className="pagination">{children}</ul>
 );
 
 const Page = ({value, isActive, onClick}) => (
-  <li className={isActive ? 'active' : null}><a href="#" onClick={onClick}>{value}</a></li>
+  <li className={isActive ? 'active' : null}><a href="#" onClick={withPreventDefault(onClick)}>{value}</a></li>
 );
 
 const Ellipsis = ({onClick}) => (
-  <li><a href="#" onClick={onClick}>...</a></li>
+  <li><a href="#" onClick={withPreventDefault(onClick)}>...</a></li>
 );
 
 const FirstPageLink = ({isActive, onClick}) => (
-  <li><a href="#" onClick={onClick}>&laquo;</a></li>
+  <li><a href="#" onClick={withPreventDefault(onClick)}>&laquo;</a></li>
 );
 
 const PreviousPageLink = ({isActive, onClick}) => (
-  <li><a href="#" onClick={onClick}>&lsaquo;</a></li>
+  <li><a href="#" onClick={withPreventDefault(onClick)}>&lsaquo;</a></li>
 );
 
 const NextPageLink = ({isActive, onClick}) => (
-  <li><a href="#" onClick={onClick}>&rsaquo;</a></li>
+  <li><a href="#" onClick={withPreventDefault(onClick)}>&rsaquo;</a></li>
 );
 
 const LastPageLink = ({isActive, onClick}) => (
-  <li><a href="#" onClick={onClick}>&raquo;</a></li>
+  <li><a href="#" onClick={withPreventDefault(onClick)}>&raquo;</a></li>
 );
 
 const itemTypeToComponent = {
